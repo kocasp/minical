@@ -1,6 +1,6 @@
 import React from "react";
 import * as dateFns from "date-fns";
-import { pl } from 'date-fns/locale'
+// import { pl } from 'date-fns/locale'
 
 class Calendar extends React.Component {
   state = {
@@ -10,7 +10,7 @@ class Calendar extends React.Component {
 
   cal_options = {
     weekStartsOn: 1,
-    locale: pl,
+    // locale: pl,
   }
 
   renderHeader() {
@@ -79,7 +79,6 @@ class Calendar extends React.Component {
             onClick={() => {this.onDateClick(cloneDay)}}
           >
             <span className="number">{formattedDate}</span>
-            <span className="bg">{formattedDate}</span>
           </div>
         );
         day = dateFns.addDays(day, 1);
