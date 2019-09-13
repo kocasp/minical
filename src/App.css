@@ -285,11 +285,14 @@ main {
 
 /* DETAILS SIDEBAR */
 .details {
-  flex: 1;
+  flex: 1 1;
   background-color: #fff;
-  padding: 0 40px 0 40px;
+  padding: 0px 20px 0 20px;
+  margin: 25px 20px 15px 20px;
+  border-radius: 13px;
 }
 .details .header {
+  margin-top: -20px;
   display: flex;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
@@ -316,4 +319,24 @@ main {
 .small_button:hover {
   line-height: 32px;
   border: 0px solid white;
+}
+
+.task_container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.task_container .stripe {
+  background-color: #FFA144;
+  width: 5px;
+  border-radius: 5px;
+}
+
+.task_container .content {
+  font-size: 14px;
+  font-weight: normal;
+  color: #2d2d2d;
+  text-align: left;
+  margin-left: 20px;
+  max-width: 400px;
 }

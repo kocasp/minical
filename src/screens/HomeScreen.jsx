@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import Calendar from "../components/calendar";
 import AddNoteButton from "../components/buttons/add_note_button";
+import TasksList from "../components/tasks_list";
 
 class HomeScreen extends React.Component {
 
@@ -17,6 +18,7 @@ class HomeScreen extends React.Component {
             </div>
             <AddNoteButton/>
           </div>
+          <TasksList/>
         </div>
       </div>
     );
