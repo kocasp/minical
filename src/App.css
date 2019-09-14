@@ -70,9 +70,9 @@ html {
   --main-color: #1a8fff;
   --text-color: #777;
   --text-color-light: #ccc;
-  --text-color-primary: #3016C1;
+  --text-color-primary: #104F78;
   --border-color: #eee;
-  --bg-color: #F6F7FF;
+  --bg-color: #F5F7FB;
   --neutral-color: #fff;
 }
 
@@ -219,13 +219,14 @@ main {
 }
 
 .calendar .body .cell:hover {
-  background: var(--bg-color);
   transition: 0.5s ease-out;
+  box-shadow: 0px 0px 9px 0px rgba(222,223,227,0.5);
+  position: relative;
+  transform: scale(1.1);
 }
 
 .calendar .body .selected {
-  transition: none !important;
-  border: 2px solid #3016C1;
+  border: 2px solid #104F78;
   box-sizing: border-box;
 }
 
@@ -339,4 +340,41 @@ main {
   text-align: left;
   margin-left: 20px;
   max-width: 400px;
+}
+
+.main_container {
+  height: 100%;
+  display: flex;
+}
+
+.menu {
+  width: 50px;
+  background-color: #104F78;
+  margin: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 12px;
+}
+
+.logo_bar {
+  width: 50px;
+  background-color: #104F78;
+}
+
+.homescreen {
+  flex: 1;
+}
+
+.menu_button {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 21px;
+  height: 35px;
+}
+
+.menu_button:hover {
+  cursor: pointer;
+  background-color:rgba(0, 0, 0, 0.2);
 }
