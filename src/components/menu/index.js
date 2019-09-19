@@ -1,20 +1,24 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 class Menu extends React.Component {
 
   render() {
     return (
       <div class="menu">
-        <div class="menu_button">
-          <div className="icon" onClick={this.prevMonth}>
-            event
+        <NavLink to="/home/">
+          <div class="menu_button">
+            <div className="icon" onClick={this.prevMonth}>
+              event
+            </div>
           </div>
-        </div>
-        <div class="menu_button">
-          <div className="icon" onClick={this.prevMonth}>
-            fingerprint
+        </NavLink>
+        <NavLink to="/settings/">
+          <div class="menu_button">
+            <div className="icon" onClick={this.prevMonth}>
+              fingerprint
+            </div>
           </div>
-        </div>
+        </NavLink>
       </div>
     );
   }
