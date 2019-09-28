@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 
@@ -22,7 +22,8 @@ class App extends React.Component {
           <main>
             <div class='main_container'>
               <Menu/>
-              <Route path="/" exact component={HomeScreen} />
+              <Redirect exact from='/' to='/home/' />
+              <Route path="/home/" exact component={HomeScreen} />
               <Route path="/settings/" component={SettingsScreen} />
             </div>
           </main>
