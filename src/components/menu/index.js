@@ -5,7 +5,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div class="menu">
-        <NavLink to="/home/">
+        <NavLink to="/">
           <div class="menu_button">
             <div className="icon" onClick={this.prevMonth}>
               event

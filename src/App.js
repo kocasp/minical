@@ -6,6 +6,7 @@ import './App.css';
 
 import HomeScreen from "./screens/HomeScreen";
 import SettingsScreen from "./screens/SettingsScreen";
+import Menu from "./components/menu";
 
 class App extends React.Component {
 
@@ -19,8 +20,11 @@ class App extends React.Component {
       <Router>
         <div className="App">
           <main>
-            <Route path="/home/" exact component={HomeScreen} />
-            <Route path="/settings/" component={SettingsScreen} />
+            <div class='main_container'>
+              <Menu/>
+              <Route path="/" exact component={HomeScreen} />
+              <Route path="/settings/" component={SettingsScreen} />
+            </div>
           </main>
         </div>
       </Router>

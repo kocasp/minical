@@ -10,19 +10,16 @@ class HomeScreen extends React.Component {
 
   render() {
     return (
-      <div class='main_container'>
-        <Menu/>
-        <div class="homescreen" style={{display: 'flex', alignItems: 'stretch', height: '100%'}}>
-          <Calendar style={{flex: 2}}/>
-          <div class="details">
-            <div class="header">
-              <div class="date">
-                12.09.2019
-              </div>
-              <AddNoteButton/>
+      <div class="homescreen" style={{display: 'flex', alignItems: 'stretch', height: '100%'}}>
+        <Calendar style={{flex: 2}}/>
+        <div class="details">
+          <div class="header">
+            <div class="date">
+              12.09.2019
             </div>
-            <TasksList/>
+            <AddNoteButton/>
           </div>
+          <TasksList/>
         </div>
       </div>
     );
