@@ -5,6 +5,8 @@ import Calendar from "../components/calendar";
 import AddNoteButton from "../components/buttons/add_note_button";
 import TasksList from "../components/tasks_list";
 import Menu from "../components/menu";
+import { connect } from 'react-redux';
+import * as dateFns from "date-fns";
 
 class HomeScreen extends React.Component {
 
@@ -15,7 +17,7 @@ class HomeScreen extends React.Component {
         <div class="details">
           <div class="header">
             <div class="date">
-              12.09.2019
+              {dateFns.format(this.props.date, 'dd-MM-yyyy')}
             </div>
             <AddNoteButton/>
           </div>
@@ -26,4 +28,11 @@ class HomeScreen extends React.Component {
   }
 }
 
-export default HomeScreen;
+const mapStateToProps = function(state) {
+  console.log(state)
+  return {
+    date: state.date
+  }
+}
+
+export default connect(mapStateToProps)(HomeScreen);

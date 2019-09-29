@@ -1,11 +1,13 @@
 import React from "react";
 import * as dateFns from "date-fns";
+import { connect } from 'react-redux';
+import * as actions from "../../actions";
 // import { pl } from 'date-fns/locale'
 
 class Calendar extends React.Component {
   state = {
-    currentMonth: new Date(),
-    selectedDate: new Date()
+    currentMonth: this.props.date,
+    selectedDate: this.props.date
   };
 
   cal_options = {
@@ -97,6 +99,7 @@ class Calendar extends React.Component {
     this.setState({
       selectedDate: day
     });
+    this.props.pickDate(day);
   };
 
   nextMonth = () => {
@@ -122,4 +125,11 @@ class Calendar extends React.Component {
   }
 }
 
-export default Calendar;
+const mapStateToProps = function(state) {
+  console.log(state)
+  return {
+    date: state.date
+  }
+}
+
+export default connect(mapStateToProps, actions)(Calendar);
