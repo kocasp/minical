@@ -382,3 +382,10 @@ main {
   cursor: pointer;
   background-color:rgba(0, 0, 0, 0.2);
 }
+
+.intro {
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}

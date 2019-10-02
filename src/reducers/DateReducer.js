@@ -3,6 +3,6 @@ export const DateReducer = (state = [], action) => { // (1)
     case 'PICK_DATE':
       return action.payload
     default:
-      return new Date();
+      return state;
   }
 }

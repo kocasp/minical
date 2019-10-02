@@ -2,7 +2,8 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 
 const initialState = {
-  date: '28-09-2019'
+  date: new Date(),
+  intro_played: false,
 }
 
 export const store = createStore(

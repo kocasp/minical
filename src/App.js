@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import HomeScreen from "./screens/HomeScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import Menu from "./components/menu";
+import Intro from "./components/intro";
 
 class App extends React.Component {
 
@@ -20,18 +21,20 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
-          <div className="App">
-            <main>
-              <div class='main_container'>
-                <Menu/>
-                <Redirect exact from='/' to='/home/' />
-                <Route path="/home/" exact component={HomeScreen} />
-                <Route path="/settings/" component={SettingsScreen} />
-              </div>
-            </main>
-          </div>
-        </Router>
+        <Intro>
+          <Router>
+            <div className="App">
+              <main>
+                <div class='main_container'>
+                  <Menu/>
+                  <Redirect exact from='/' to='/home/' />
+                  <Route path="/home/" exact component={HomeScreen} />
+                  <Route path="/settings/" component={SettingsScreen} />
+                </div>
+              </main>
+            </div>
+          </Router>
+        </Intro>
       </Provider>
     );
   }

@@ -4,3 +4,8 @@ export const pickDate = date => {
     payload: date
   };
 };
+export const setIntroPlayed = date => {
+  return {
+    type: "INTRO_PLAYED"
+  };
+};
