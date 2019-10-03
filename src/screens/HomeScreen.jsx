@@ -11,6 +11,7 @@ import * as dateFns from "date-fns";
 class HomeScreen extends React.Component {
 
   render() {
+    console.log(this.props.date)
     return (
       <div class="homescreen" style={{display: 'flex', alignItems: 'stretch', height: '100%'}}>
         <Calendar style={{flex: 2}}/>
@@ -29,7 +30,6 @@ class HomeScreen extends React.Component {
 }
 
 const mapStateToProps = function(state) {
-  console.log(state)
   return {
     date: state.date
   }

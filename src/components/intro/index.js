@@ -27,7 +27,6 @@ class Intro extends React.Component {
 }
 
 const mapStateToProps = function(state) {
-  console.log(state)
   return {
     intro_played: state.intro_played
   }

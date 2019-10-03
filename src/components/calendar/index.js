@@ -126,7 +126,6 @@ class Calendar extends React.Component {
 }
 
 const mapStateToProps = function(state) {
-  console.log(state)
   return {
     date: state.date
   }
