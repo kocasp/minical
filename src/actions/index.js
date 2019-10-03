@@ -9,3 +9,12 @@ export const setIntroPlayed = date => {
     type: "INTRO_PLAYED"
   };
 };
+export const addLabel = (day, label) => {
+  return {
+    type: "ADD_LABEL",
+    payload: {
+      day: day,
+      label: label,
+    },
+  };
+};
