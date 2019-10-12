@@ -6,6 +6,10 @@ html {
   user-select: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
 }
@@ -388,4 +392,41 @@ main {
   display: flex;
   justify-content:center;
   align-items:center;
+}
+
+.button{
+  background-color: #F5F7FB;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 10px;
+  color: var(--text-color-primary);
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover{
+  background-color: #e2e6ea;
+}
+
+.button.primary{
+  color: white;
+  background-color: #104F78;
+}
+
+.button.primary:hover{
+  background-color: #114363;
+}
+
+.task-input{
+  margin-bottom: 10px;
+  width: 100%;
+  border-color: var(--text-color-light);
+  resize: none;
+  border-radius: 6px;
+  color: #2d2d2d;
+  box-shadow: none;
+  outline: none;
+  font-size: 14px;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+// import logo from './logo.svg';
 import './App.css';
 import { store, persistor } from "./store";
 import { Provider } from 'react-redux'
@@ -30,7 +29,7 @@ class App extends React.Component {
                   <div class='main_container'>
                     <Menu/>
                     <Redirect exact from='/' to='/home/' />
-                    <Route path="/home/" exact component={HomeScreen} />
+                    <Route path="/home/" component={HomeScreen} />
                     <Route path="/settings/" component={SettingsScreen} />
                   </div>
                 </main>

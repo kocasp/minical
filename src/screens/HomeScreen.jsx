@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 
 import Calendar from "../components/calendar";
 import AddNoteButton from "../components/buttons/add_note_button";
 import TasksList from "../components/tasks_list";
-import Menu from "../components/menu";
+import TasksForm from "../components/tasks_form";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import { connect } from 'react-redux';
 import * as dateFns from "date-fns";
 
@@ -20,9 +20,12 @@ class HomeScreen extends React.Component {
             <div class="date">
               {dateFns.format(this.props.date, 'dd-MM-yyyy')}
             </div>
-            <AddNoteButton/>
+            <NavLink to="/home/new">
+              <AddNoteButton/>
+            </NavLink>
           </div>
-          <TasksList/>
+          <Route path="/home/" exact component={TasksList} />
+          <Route path="/home/new" component={TasksForm} />
         </div>
       </div>
     );
