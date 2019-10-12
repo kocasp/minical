@@ -43,7 +43,7 @@ export const CalendarReducer = (state = {}, action) => {
     // task_index
     case 'REMOVE_TASK':
       state[action.payload.day].tasks.splice(action.payload.task_index, 1)
-      return state
+      return {...state}
     default:
       return state;
   }

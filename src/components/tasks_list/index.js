@@ -10,8 +10,8 @@ class TasksList extends React.Component {
     const day_string = dateFns.format(this.props.date, 'dd-MM-yyyy')
     if (this.props.calendar[day_string]){
       return (
-        this.props.calendar[day_string].tasks.map((task) => {
-          return <div><Task id={task.id} content={task.content} color={task.color} />{this.props.labels}</div>
+        this.props.calendar[day_string].tasks.map((task, index) => {
+          return <div><Task key={index} day_string={day_string} content={task.content} color={task.color} />{this.props.labels}</div>
         })
       );
     } else {

@@ -27,3 +27,12 @@ export const addTask = (day, task) => {
     },
   };
 };
+export const removeTask = (day, task_index) => {
+  return {
+    type: "REMOVE_TASK",
+    payload: {
+      day: day,
+      task_index: task_index,
+    },
+  };
+};

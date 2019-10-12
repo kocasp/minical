@@ -1,4 +1,6 @@
 import React from "react";
+import * as actions from "../../actions";
+import { connect } from 'react-redux';
 
 class Task extends React.Component {
 
@@ -19,10 +21,15 @@ class Task extends React.Component {
         <div class="content">
           {this.truncateText(this.props.content)}
         </div>
+        <button class="remove" onClick={()=>{ this.props.removeTask(this.props.day_string, this.props.key) }}>
+          <div className="icon remove">
+            clear
+          </div>
+        </button>
       </div>
     );
   }
 
 }
 
-export default Task;
+export default connect(null, actions)(Task);

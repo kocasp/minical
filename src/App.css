@@ -344,6 +344,8 @@ main {
   text-align: left;
   margin-left: 20px;
   max-width: 400px;
+  flex: 1;
+  overflow: hidden;
 }
 
 .main_container {
@@ -429,4 +431,14 @@ main {
   box-shadow: none;
   outline: none;
   font-size: 14px;
+}
+
+.task_container .remove {
+  background-color: #F5F7FB;
+  border: none;
+  border-radius: 6px;
+}
+
+.task_container .remove:hover {
+  cursor: pointer;
 }
