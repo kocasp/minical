@@ -101,8 +101,8 @@ class Calendar extends React.Component {
     this.setState({
       selectedDate: day
     });
-    this.props.history.push('/home');
     this.props.pickDate(day);
+    this.props.history.push('/home');
   };
 
   nextMonth = () => {
