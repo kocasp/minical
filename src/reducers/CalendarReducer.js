@@ -24,12 +24,12 @@ export const CalendarReducer = (state = {}, action) => {
       else {
         state[action.payload.day] = {...state[action.payload.day], labels: [action.payload.label]};
       }
-      return state;
+      return {...state};
     // day
     // label
     case 'REMOVE_LABEL':
       state[action.payload.day].labels = state[action.payload.day].labels.filter(item => item !== action.payload.label);
-      return state;
+      return {...state};
     // day
     // task
     case 'ADD_TASK':
@@ -38,7 +38,7 @@ export const CalendarReducer = (state = {}, action) => {
       } else {
         state[action.payload.day] = {...state[action.payload.day], tasks: [action.payload.task]};
       }
-      return state;
+      return {...state};
     // day
     // task_index
     case 'REMOVE_TASK':

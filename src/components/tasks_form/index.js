@@ -14,9 +14,8 @@ class TasksForm extends React.Component {
   }
 
   handleSave(){
-    let day_string = dateFns.format(this.props.date, 'dd-MM-yyyy')
+    const day_string = dateFns.format(this.props.date, 'dd-MM-yyyy')
     this.props.addTask(day_string, {content: this.state.value})
-    alert('Task added')
   }
 
   handleChange(event) {

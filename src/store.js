@@ -12,7 +12,7 @@ const initialState = {
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: []
+  whitelist: ['calendar']
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)
