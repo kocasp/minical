@@ -2,6 +2,8 @@ import React from "react";
 import * as dateFns from "date-fns";
 import { connect } from 'react-redux';
 import * as actions from "../../actions";
+import { NavLink } from "react-router-dom";
+import { withRouter } from 'react-router-dom'
 // import { pl } from 'date-fns/locale'
 
 class Calendar extends React.Component {
@@ -99,6 +101,7 @@ class Calendar extends React.Component {
     this.setState({
       selectedDate: day
     });
+    this.props.history.push('/home');
     this.props.pickDate(day);
   };
 
@@ -131,4 +134,4 @@ const mapStateToProps = function(state) {
   }
 }
 
-export default connect(mapStateToProps, actions)(Calendar);
+export default withRouter(connect(mapStateToProps, actions)(Calendar));

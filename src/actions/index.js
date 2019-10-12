@@ -18,3 +18,12 @@ export const addLabel = (day, label) => {
     },
   };
 };
+export const addTask = (day, task) => {
+  return {
+    type: "ADD_TASK",
+    payload: {
+      day: day,
+      task: task,
+    },
+  };
+};
