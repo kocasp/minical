@@ -54,11 +54,22 @@ class Calendar extends React.Component {
     return <div className="days row">{days}</div>;
   }
 
+  cellTask(color, content){
+    return (
+      <div class="cell_task">
+        <div className="icon" style={{color: color || '#FFA144'}}>
+          fiber_manual_record
+        </div>
+        {content.substring(0,8)+".."}
+      </div>
+    )
+  }
+
   renderCellTasks(day_string) {
     if (this.props.calendar[day_string]){
       return (
         this.props.calendar[day_string].tasks.slice(0,6).map((task, index) => {
-          return <div class="cell_task" style={{color: task.color || '#FFA144'}}>{task.content.substring(0,12)+".."}</div>
+          return this.cellTask(task.color, task.content)
         })
       );
     } else {
@@ -96,7 +107,7 @@ class Calendar extends React.Component {
             onClick={() => {this.onDateClick(cloneDay)}}
           >
             {this.renderCellTasks.bind(this)(day_string)}
-            <span className="number">{formattedDate}</span>
+            <span className={"number "+((day_string == dateFns.format(new Date(), 'dd-MM-yyyy')) ? 'today' : '')}>{formattedDate}</span>
           </div>
         );
         day = dateFns.addDays(day, 1);
