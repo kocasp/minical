@@ -13,6 +13,10 @@ class Task extends React.Component {
     }
   }
 
+  handleRemoveClick(){
+    this.props.removeTask(this.props.day_string, this.props.index)
+  }
+
   render() {
     return (
       <div className="task_container" onClick={this.prevMonth}>
@@ -21,7 +25,7 @@ class Task extends React.Component {
         <div class="content">
           {this.truncateText(this.props.content)}
         </div>
-        <button class="remove" onClick={()=>{ this.props.removeTask(this.props.day_string, this.props.key) }}>
+        <button class="remove" onClick={this.handleRemoveClick.bind(this)}>
           <div className="icon remove">
             clear
           </div>

@@ -11,7 +11,7 @@ class TasksList extends React.Component {
     if (this.props.calendar[day_string]){
       return (
         this.props.calendar[day_string].tasks.map((task, index) => {
-          return <div><Task key={index} day_string={day_string} content={task.content} color={task.color} />{this.props.labels}</div>
+          return <div><Task index={index} day_string={day_string} content={task.content} color={task.color} />{this.props.labels}</div>
         })
       );
     } else {

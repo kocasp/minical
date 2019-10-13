@@ -4,22 +4,61 @@ import { NavLink } from "react-router-dom";
 import { connect } from 'react-redux';
 import * as actions from "../../actions";
 import * as dateFns from "date-fns";
+import { Dropdown } from 'semantic-ui-react'
+
+const colorOptions = [
+  {
+    key: 'Default',
+    text: 'Default',
+    value: 'orange',
+    label: { color: 'orange', empty: true, circular: true },
+  },
+  {
+    key: 'Blue',
+    text: 'Blue',
+    value: 'blue',
+    label: { color: 'blue', empty: true, circular: true },
+  },
+  {
+    key: 'Green',
+    text: 'Green',
+    value: 'green',
+    label: { color: 'green', empty: true, circular: true },
+  },
+  {
+    key: 'Red',
+    text: 'Red',
+    value: 'red',
+    label: { color: 'red', empty: true, circular: true },
+  },
+]
 
 class TasksForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
+      color: null
     };
   }
 
   handleSave(){
     const day_string = dateFns.format(this.props.date, 'dd-MM-yyyy')
-    this.props.addTask(day_string, {content: this.state.value})
+    this.props.addTask(
+      day_string,
+      {
+        content: this.state.value,
+        color: this.state.color,
+      }
+    )
   }
 
   handleChange(event) {
     this.setState({value: event.target.value});
+  }
+
+  handleColorChange(event, data) {
+    this.setState({color: data.value});
   }
 
   render() {
@@ -27,6 +66,13 @@ class TasksForm extends React.Component {
       <div>
         <textarea class='task-input' rows='10' placeholder="Event description ..." value={this.state.value} onChange={this.handleChange.bind(this)}/>
         <br/>
+        <Dropdown
+          inline
+          label
+          options={colorOptions}
+          defaultValue={colorOptions[0].value}
+          onChange={this.handleColorChange.bind(this)}
+        />
         <NavLink to="/home">
           <Button type="light">
             Cancel
