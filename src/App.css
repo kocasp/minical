@@ -306,6 +306,7 @@ main {
   padding: 0px 20px 0 20px;
   margin: 25px 20px 15px 20px;
   border-radius: 5px;
+  overflow: auto;
 }
 .details .header {
   margin-top: -20px;
@@ -469,19 +470,24 @@ main {
   right: 7px;
 }
 
-.cell-label.icon.warning{
-  top: 25px;
-  color: red;
+.cell-label.icon.announcement{
+  top: 22px;
+  color: crimson;
 }
 
 .cell-label.icon.school{
-  top: 42px;
-  color: blue;
+  top: 36px;
+  color: midnightblue;
 }
 
 .cell-label.icon.cake{
-  top: 59px;
+  top: 50px;
   color: orange;
+}
+
+.cell-label.icon.opacity{
+  top: 64px;
+  color: lightpink;
 }
 
 .label.icon{
@@ -490,16 +496,20 @@ main {
   margin-right: 5px;
 }
 
-.label.icon.warning{
-  color: red;
+.label.icon.announcement{
+  color: crimson;
 }
 
 .label.icon.school{
-  color: blue;
+  color: midnightblue;
 }
 
 .label.icon.cake{
   color: orange;
+}
+
+.label.icon.opacity{
+  color: lightpink;
 }
 
 .label.icon.disabled{

@@ -18,7 +18,6 @@ class Menu extends React.Component {
     return (
       <div class="minical-menu">
         <MenuButton path='/home/' icon='event'/>
-        <MenuButton path='/settings/' icon='fingerprint'/>
       </div>
     );
   }

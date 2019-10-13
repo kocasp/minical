@@ -38,9 +38,10 @@ class Labels extends React.Component {
   render() {
     return (
       <div class="labels">
-        {this.renderLabel('warning')}
+        {this.renderLabel('announcement')}
         {this.renderLabel('school')}
         {this.renderLabel('cake')}
+        {this.renderLabel('opacity')}
       </div>
     );
   }

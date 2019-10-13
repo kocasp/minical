@@ -121,9 +121,10 @@ class Calendar extends React.Component {
           >
             {this.renderCellTasks.bind(this)(day_string)}
             <span className={"number "+((day_string == dateFns.format(new Date(), 'dd-MM-yyyy')) ? 'today' : '')}>{formattedDate}</span>
-            {this.renderLabel(day_string, 'warning')}
+            {this.renderLabel(day_string, 'announcement')}
             {this.renderLabel(day_string, 'school')}
             {this.renderLabel(day_string, 'cake')}
+            {this.renderLabel(day_string, 'opacity')}
           </div>
         );
         day = dateFns.addDays(day, 1);
