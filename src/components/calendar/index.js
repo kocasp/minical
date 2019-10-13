@@ -66,14 +66,27 @@ class Calendar extends React.Component {
   }
 
   renderCellTasks(day_string) {
-    if (this.props.calendar[day_string]){
+    if (this.props.calendar[day_string] && this.props.calendar[day_string].tasks){
       return (
-        this.props.calendar[day_string].tasks.slice(0,6).map((task, index) => {
+        this.props.calendar[day_string].tasks.slice(0,5).map((task, index) => {
           return this.cellTask(task.color, task.content)
         })
       );
     } else {
       return null;
+    }
+  }
+
+  renderLabel(day_string, label_name){
+    if (!this.props.calendar[day_string] || !this.props.calendar[day_string].labels) {
+      return null;
+    }
+    if(this.props.calendar[day_string].labels.includes(label_name)){
+      return(
+        <div className={"cell-label icon " + label_name}>
+          {label_name}
+        </div>
+      )
     }
   }
 
@@ -108,6 +121,9 @@ class Calendar extends React.Component {
           >
             {this.renderCellTasks.bind(this)(day_string)}
             <span className={"number "+((day_string == dateFns.format(new Date(), 'dd-MM-yyyy')) ? 'today' : '')}>{formattedDate}</span>
+            {this.renderLabel(day_string, 'warning')}
+            {this.renderLabel(day_string, 'school')}
+            {this.renderLabel(day_string, 'cake')}
           </div>
         );
         day = dateFns.addDays(day, 1);

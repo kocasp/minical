@@ -18,6 +18,15 @@ export const addLabel = (day, label) => {
     },
   };
 };
+export const removeLabel = (day, label) => {
+  return {
+    type: "REMOVE_LABEL",
+    payload: {
+      day: day,
+      label: label,
+    },
+  };
+};
 export const addTask = (day, task) => {
   return {
     type: "ADD_TASK",

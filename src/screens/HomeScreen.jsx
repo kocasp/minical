@@ -4,6 +4,7 @@ import Calendar from "../components/calendar";
 import AddNoteButton from "../components/buttons/add_note_button";
 import TasksList from "../components/tasks_list";
 import TasksForm from "../components/tasks_form";
+import Labels from "../components/labels";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import { connect } from 'react-redux';
 import * as dateFns from "date-fns";
@@ -19,6 +20,7 @@ class HomeScreen extends React.Component {
             <div class="date">
               {dateFns.format(this.props.date, 'dd-MM-yyyy')}
             </div>
+            <Labels day_string={dateFns.format(this.props.date, 'dd-MM-yyyy')} />
             <NavLink to="/home/new">
               <AddNoteButton/>
             </NavLink>

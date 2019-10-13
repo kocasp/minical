@@ -463,3 +463,45 @@ main {
 .ui.inline.dropdown .text {
   font-weight: 400;
 }
+
+.cell-label.icon{
+  position: absolute;
+  right: 7px;
+}
+
+.cell-label.icon.warning{
+  top: 25px;
+  color: red;
+}
+
+.cell-label.icon.school{
+  top: 42px;
+  color: blue;
+}
+
+.cell-label.icon.cake{
+  top: 59px;
+  color: orange;
+}
+
+.label.icon{
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.label.icon.warning{
+  color: red;
+}
+
+.label.icon.school{
+  color: blue;
+}
+
+.label.icon.cake{
+  color: orange;
+}
+
+.label.icon.disabled{
+  color: lightgrey;
+}
