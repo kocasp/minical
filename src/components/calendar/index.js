@@ -54,6 +54,18 @@ class Calendar extends React.Component {
     return <div className="days row">{days}</div>;
   }
 
+  renderCellTasks(day_string) {
+    if (this.props.calendar[day_string]){
+      return (
+        this.props.calendar[day_string].tasks.slice(0,6).map((task, index) => {
+          return <div class="cell_task" style={{color: task.color || '#FFA144'}}>{task.content.substring(0,12)+".."}</div>
+        })
+      );
+    } else {
+      return null;
+    }
+  }
+
   renderCells() {
     const { currentMonth, selectedDate } = this.state;
     const monthStart = dateFns.startOfMonth(currentMonth, this.cal_options);
@@ -72,6 +84,7 @@ class Calendar extends React.Component {
       for (let i = 0; i < 7; i++) {
         formattedDate = dateFns.format(day, dateFormat);
         const cloneDay = day;
+        const day_string = dateFns.format(day, 'dd-MM-yyyy')
         days.push(
           <div
             className={`col cell ${
@@ -82,6 +95,7 @@ class Calendar extends React.Component {
             key={day}
             onClick={() => {this.onDateClick(cloneDay)}}
           >
+            {this.renderCellTasks.bind(this)(day_string)}
             <span className="number">{formattedDate}</span>
           </div>
         );
@@ -130,7 +144,8 @@ class Calendar extends React.Component {
 
 const mapStateToProps = function(state) {
   return {
-    date: state.date
+    date: state.date,
+    calendar: state.calendar
   }
 }
 
